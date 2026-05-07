@@ -61,11 +61,20 @@ app.MapGet("/funcionario/cadastrar/{nome}", (string nome) => {
     funcionarios[contador] = funcionario;
     contador++;
 
-    //Modificar na próxima aula
     return Results.Ok(new{
-        funcionarios
+        funcionario
     });
  });
 
+app.MapGet("/funcionario/lista", () => {
+      Funcionario[] funcionariosCadastrados = new Funcionario[contador];
+      
+      for(int i=0; i<contador; i++){
+funcionariosCadastrados[i] = funcionarios[i];
+      }
+    return Results.Ok(new{
+        funcionariosCadastrados
+    });
+});
 
 app.Run();
