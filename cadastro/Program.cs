@@ -39,7 +39,7 @@ app.MapGet("/objeto", () => {
 });
 
 app.MapGet("/vetor", () => {
-    int[] numeros = new int[100];
+    int[] numeros = new int[3];
 
     numeros[0] = 15;
     numeros[1] = 53;
